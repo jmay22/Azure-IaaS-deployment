@@ -1,0 +1,151 @@
+<svg viewBox="0 0 900 580" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, system-ui, sans-serif">
+
+  <!-- Background -->
+  <rect width="900" height="580" fill="#070d14"/>
+
+  <!-- Header -->
+  <text x="450" y="32" text-anchor="middle" font-size="11" font-weight="700" fill="#3a6ea8" letter-spacing="2" font-family="'Courier New', monospace">LAB 02 · AZURE CLOUD SECURITY SERIES</text>
+  <text x="450" y="54" text-anchor="middle" font-size="20" font-weight="800" fill="#f0f6fc" letter-spacing="-0.5">Secure 2-Tier Web Application</text>
+  <text x="450" y="74" text-anchor="middle" font-size="11" fill="#6b7a8d">IaaS Architecture · VNet · Subnets · NSG · Jump Host Pattern</text>
+
+  <!-- ── VNET OUTER BOUNDARY ── -->
+  <rect x="260" y="95" width="580" height="440" rx="20" fill="rgba(0,120,212,0.03)" stroke="#0078d4" stroke-width="1.5" stroke-dasharray="8,5"/>
+  <rect x="282" y="84" width="110" height="22" fill="#070d14"/>
+  <text x="288" y="99" font-size="10" font-weight="700" fill="#0078d4" letter-spacing="1.2" font-family="'Courier New', monospace">☁ vnet-lab02 · 10.0.0.0/16</text>
+
+  <!-- ── PUBLIC SUBNET BOX ── -->
+  <rect x="290" y="115" width="520" height="170" rx="14" fill="rgba(46,160,67,0.04)" stroke="#2ea043" stroke-width="1.2" stroke-dasharray="6,4"/>
+  <rect x="308" y="105" width="155" height="20" fill="#070d14"/>
+  <text x="314" y="119" font-size="9.5" font-weight="700" fill="#2ea043" letter-spacing="1" font-family="'Courier New', monospace">PUBLIC SUBNET · snet-web · 10.0.1.0/24</text>
+
+  <!-- ── PRIVATE SUBNET BOX ── -->
+  <rect x="290" y="315" width="520" height="190" rx="14" fill="rgba(220,60,60,0.04)" stroke="#e05252" stroke-width="1.2" stroke-dasharray="6,4"/>
+  <rect x="308" y="305" width="165" height="20" fill="#070d14"/>
+  <text x="314" y="319" font-size="9.5" font-weight="700" fill="#e05252" letter-spacing="1" font-family="'Courier New', monospace">PRIVATE SUBNET · snet-db · 10.0.2.0/24</text>
+
+  <!-- ══════════════════════════════ -->
+  <!-- INTERNET NODE -->
+  <!-- ══════════════════════════════ -->
+  <rect x="50" y="160" width="110" height="110" rx="16" fill="#131f2e" stroke="#2d3f55" stroke-width="1.5"/>
+  <circle cx="105" cy="198" r="22" fill="none" stroke="#5ba3f5" stroke-width="1.8"/>
+  <ellipse cx="105" cy="198" rx="10" ry="22" fill="none" stroke="#5ba3f5" stroke-width="1.4"/>
+  <line x1="83" y1="198" x2="127" y2="198" stroke="#5ba3f5" stroke-width="1.4"/>
+  <line x1="83" y1="188" x2="127" y2="188" stroke="#5ba3f5" stroke-width="1"/>
+  <line x1="83" y1="208" x2="127" y2="208" stroke="#5ba3f5" stroke-width="1"/>
+  <text x="105" y="240" text-anchor="middle" font-size="11" font-weight="700" fill="#c9d1d9">Internet</text>
+  <text x="105" y="254" text-anchor="middle" font-size="9" fill="#4a5568" font-family="'Courier New', monospace">Public Traffic</text>
+
+  <!-- Arrow: Internet → Web VM -->
+  <line x1="163" y1="205" x2="308" y2="205" stroke="#2ea043" stroke-width="2"/>
+  <polygon points="305,199 318,205 305,211" fill="#2ea043"/>
+  <rect x="192" y="188" width="85" height="16" rx="4" fill="#070d14"/>
+  <text x="234" y="200" text-anchor="middle" font-size="8.5" fill="#2ea043" font-weight="700" font-family="'Courier New', monospace">HTTP:80 · SSH:22</text>
+
+  <!-- BLOCKED arrow: Internet → DB VM (with X) -->
+  <line x1="105" y1="270" x2="105" y2="385" stroke="#e05252" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <line x1="105" y1="385" x2="305" y2="410" stroke="#e05252" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <!-- X mark -->
+  <circle cx="200" cy="340" r="12" fill="#1a0a0a" stroke="#e05252" stroke-width="1.5"/>
+  <line x1="194" y1="334" x2="206" y2="346" stroke="#e05252" stroke-width="2" stroke-linecap="round"/>
+  <line x1="206" y1="334" x2="194" y2="346" stroke="#e05252" stroke-width="2" stroke-linecap="round"/>
+  <text x="200" y="328" text-anchor="middle" font-size="8" fill="#e05252" font-weight="700" font-family="'Courier New', monospace">BLOCKED</text>
+  <text x="200" y="366" text-anchor="middle" font-size="8" fill="#e05252" font-family="'Courier New', monospace">No Public IP</text>
+
+  <!-- ══════════════════════════════ -->
+  <!-- WEB SERVER VM NODE -->
+  <!-- ══════════════════════════════ -->
+  <rect x="370" y="135" width="160" height="130" rx="14" fill="#0d2035" stroke="#0a4a7a" stroke-width="1.5"/>
+  <!-- Public IP badge -->
+  <rect x="482" y="128" width="62" height="16" rx="4" fill="#2ea043"/>
+  <text x="513" y="139" text-anchor="middle" font-size="8" font-weight="700" fill="white" letter-spacing="0.4" font-family="'Courier New', monospace">PUBLIC IP</text>
+  <!-- Server icon -->
+  <rect x="420" y="152" width="60" height="46" rx="5" fill="none" stroke="#4a9fd4" stroke-width="1.8"/>
+  <line x1="420" y1="163" x2="480" y2="163" stroke="#4a9fd4" stroke-width="1.4"/>
+  <line x1="420" y1="173" x2="480" y2="173" stroke="#4a9fd4" stroke-width="1.4"/>
+  <circle cx="428" cy="158" r="2.5" fill="#2ea043"/>
+  <circle cx="436" cy="158" r="2.5" fill="#2ea043"/>
+  <rect x="426" y="178" width="48" height="10" rx="2" fill="rgba(74,159,212,0.2)" stroke="#4a9fd4" stroke-width="1"/>
+  <text x="450" y="218" text-anchor="middle" font-size="11" font-weight="700" fill="#c9d1d9">vm-web-01</text>
+  <text x="450" y="232" text-anchor="middle" font-size="9" fill="#4a5568" font-family="'Courier New', monospace">Ubuntu 20.04 · B1s</text>
+  <text x="450" y="247" text-anchor="middle" font-size="9" fill="#2ea043" font-family="'Courier New', monospace">10.0.1.4</text>
+
+  <!-- ══════════════════════════════ -->
+  <!-- SSH JUMP ARROW (Web → DB) -->
+  <!-- ══════════════════════════════ -->
+  <!-- Vertical line from web VM down -->
+  <line x1="450" y1="268" x2="450" y2="330" stroke="#f6993f" stroke-width="2"/>
+  <polygon points="444,327 450,340 456,327" fill="#f6993f"/>
+  <!-- Jump label -->
+  <rect x="458" y="288" width="85" height="26" rx="6" fill="#1a1200" stroke="#f6993f" stroke-width="1"/>
+  <text x="500" y="299" text-anchor="middle" font-size="8" fill="#f6993f" font-weight="700" font-family="'Courier New', monospace">SSH JUMP</text>
+  <text x="500" y="310" text-anchor="middle" font-size="8" fill="#f6993f" font-family="'Courier New', monospace">Internal only</text>
+
+  <!-- ══════════════════════════════ -->
+  <!-- DB SERVER VM NODE -->
+  <!-- ══════════════════════════════ -->
+  <rect x="370" y="340" width="160" height="135" rx="14" fill="#1a0d0d" stroke="#7a1a1a" stroke-width="1.5"/>
+  <!-- No Public IP badge -->
+  <rect x="474" y="333" width="70" height="16" rx="4" fill="#e05252"/>
+  <text x="509" y="344" text-anchor="middle" font-size="8" font-weight="700" fill="white" letter-spacing="0.4" font-family="'Courier New', monospace">NO PUBLIC IP</text>
+  <!-- DB icon -->
+  <ellipse cx="450" cy="367" rx="26" ry="8" fill="none" stroke="#fc8181" stroke-width="1.8"/>
+  <line x1="424" y1="367" x2="424" y2="387" stroke="#fc8181" stroke-width="1.8"/>
+  <line x1="476" y1="367" x2="476" y2="387" stroke="#fc8181" stroke-width="1.8"/>
+  <ellipse cx="450" cy="387" rx="26" ry="8" fill="none" stroke="#fc8181" stroke-width="1.8"/>
+  <ellipse cx="450" cy="377" rx="26" ry="8" fill="rgba(252,129,129,0.05)" stroke="#fc8181" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="450" y="420" text-anchor="middle" font-size="11" font-weight="700" fill="#c9d1d9">vm-db-01</text>
+  <text x="450" y="434" text-anchor="middle" font-size="9" fill="#4a5568" font-family="'Courier New', monospace">Ubuntu 20.04 · B1s</text>
+  <text x="450" y="449" text-anchor="middle" font-size="9" fill="#fc8181" font-family="'Courier New', monospace">10.0.2.4 (Private)</text>
+
+  <!-- ══════════════════════════════ -->
+  <!-- NSG NODE -->
+  <!-- ══════════════════════════════ -->
+  <rect x="620" y="350" width="170" height="150" rx="14" fill="#0d1a2e" stroke="#0078d4" stroke-width="1.5"/>
+  <text x="705" y="373" text-anchor="middle" font-size="10" font-weight="700" fill="#58a6ff" font-family="'Courier New', monospace">NSG RULE</text>
+  <line x1="635" y1="380" x2="775" y2="380" stroke="#1c3050" stroke-width="1"/>
+  <!-- Rule details -->
+  <text x="637" y="397" font-size="9" fill="#6b7a8d" font-family="'Courier New', monospace">Name:</text>
+  <text x="690" y="397" font-size="9" fill="#c9d1d9" font-family="'Courier New', monospace">Allow-Web-Subnet</text>
+  <text x="637" y="413" font-size="9" fill="#6b7a8d" font-family="'Courier New', monospace">Source:</text>
+  <text x="690" y="413" font-size="9" fill="#c9d1d9" font-family="'Courier New', monospace">10.0.1.0/24</text>
+  <text x="637" y="429" font-size="9" fill="#6b7a8d" font-family="'Courier New', monospace">Port:</text>
+  <text x="690" y="429" font-size="9" fill="#c9d1d9" font-family="'Courier New', monospace">* (Any)</text>
+  <text x="637" y="445" font-size="9" fill="#6b7a8d" font-family="'Courier New', monospace">Action:</text>
+  <rect x="688" y="436" width="40" height="14" rx="4" fill="#0d3a1a"/>
+  <text x="708" y="446" text-anchor="middle" font-size="8.5" fill="#2ea043" font-weight="700" font-family="'Courier New', monospace">ALLOW</text>
+  <text x="637" y="461" font-size="9" fill="#6b7a8d" font-family="'Courier New', monospace">Priority:</text>
+  <text x="690" y="461" font-size="9" fill="#c9d1d9" font-family="'Courier New', monospace">100</text>
+  <text x="637" y="477" font-size="9" fill="#6b7a8d" font-family="'Courier New', monospace">Applied to:</text>
+  <text x="700" y="477" font-size="9" fill="#58a6ff" font-family="'Courier New', monospace">vm-db-01 NIC</text>
+
+  <!-- Arrow: NSG applied to DB -->
+  <line x1="618" y1="410" x2="533" y2="410" stroke="#0078d4" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="536,404 523,410 536,416" fill="#0078d4"/>
+
+  <!-- ══════════════════════════════ -->
+  <!-- Detail Pills -->
+  <!-- ══════════════════════════════ -->
+  <rect x="50" y="508" width="155" height="26" rx="13" fill="#0d1a28" stroke="#1c3050" stroke-width="1"/>
+  <circle cx="66" cy="521" r="4" fill="#0078d4"/>
+  <text x="76" y="525" font-size="9.5" fill="#8a9db5"><tspan font-weight="700" fill="#4a90d9" font-family="'Courier New', monospace">Model: </tspan>IaaS</text>
+
+  <rect x="218" y="508" width="175" height="26" rx="13" fill="#0d1a28" stroke="#1c3050" stroke-width="1"/>
+  <circle cx="234" cy="521" r="4" fill="#2ea043"/>
+  <text x="244" y="525" font-size="9.5" fill="#8a9db5"><tspan font-weight="700" fill="#4a90d9" font-family="'Courier New', monospace">Network: </tspan>10.0.0.0/16 VNet</text>
+
+  <rect x="406" y="508" width="155" height="26" rx="13" fill="#0d1a28" stroke="#1c3050" stroke-width="1"/>
+  <circle cx="422" cy="521" r="4" fill="#f6993f"/>
+  <text x="432" y="525" font-size="9.5" fill="#8a9db5"><tspan font-weight="700" fill="#4a90d9" font-family="'Courier New', monospace">Pattern: </tspan>Jump Host</text>
+
+  <rect x="574" y="508" width="145" height="26" rx="13" fill="#0d1a28" stroke="#1c3050" stroke-width="1"/>
+  <circle cx="590" cy="521" r="4" fill="#e05252"/>
+  <text x="600" y="525" font-size="9.5" fill="#8a9db5"><tspan font-weight="700" fill="#4a90d9" font-family="'Courier New', monospace">DB: </tspan>Private Only</text>
+
+  <rect x="732" y="508" width="118" height="26" rx="13" fill="#0d1a28" stroke="#1c3050" stroke-width="1"/>
+  <circle cx="748" cy="521" r="4" fill="#58a6ff"/>
+  <text x="758" y="525" font-size="9.5" fill="#8a9db5"><tspan font-weight="700" fill="#4a90d9" font-family="'Courier New', monospace">FW: </tspan>NSG</text>
+
+  <!-- Footer -->
+  <text x="450" y="560" text-anchor="middle" font-size="9" fill="#2d3f55" font-family="'Courier New', monospace" letter-spacing="1">#AzureCloudLabs · Lab 02 · github.com/javen-m</text>
+
+</svg>
