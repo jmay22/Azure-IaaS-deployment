@@ -76,5 +76,5 @@ All resources deleted via Resource Group removal post-lab. Orphaned cloud resour
 LinkedIn Posts (video of the deployment):
 
 
-[[Part 1 — Definitions & Walkthrough]]([url](https://www.linkedin.com/posts/javen-m-732a1115a_cloudsecurity-azure-iaas-ugcPost-7472021931421016065-i7aq/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACY8s9YB4E17eGGyOrS3fhvSCDQWNliCmaU))(linkedin post url)
-[Part 2 — SSH Jump & NSG Config]] ([url](https://www.linkedin.com/posts/javen-m-732a1115a_cloudsecurity-azure-iaas-ugcPost-7472029087826358274-R8qf/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACY8s9YB4E17eGGyOrS3fhvSCDQWNliCmaU))(linkedin post url)
+[[Part 1 — Definitions & Walkthrough]]([url](https://www.linkedin.com/posts/javen-m-732a1115a_cloudsecurity-azure-iaas-ugcPost-7472021931421016065-i7aq/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACY8s9YB4E17eGGyOrS3fhvSCDQWNliCmaU))
+[Part 2 — SSH Jump & NSG Config]] ([url](https://www.linkedin.com/posts/javen-m-732a1115a_cloudsecurity-azure-iaas-ugcPost-7472029087826358274-R8qf/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACY8s9YB4E17eGGyOrS3fhvSCDQWNliCmaU))
